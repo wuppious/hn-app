@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Wrapper>
       <img src={ycLogo} />
-      <h1>Hacker News Feed</h1>
+      <h1>Hacker News App</h1>
     </Wrapper>
   );
 }
