@@ -42,10 +42,10 @@ export default function StoryContent({ id }: StoryProps) {
       </StoryTitle>
 
       <Details>
-        <Row>
+        <Stats>
           <Score>{data.score} pts</Score>
           <MutedText>{data.descendants ?? 0} comments</MutedText>
-        </Row>
+        </Stats>
 
         <MutedText>
           {getItemAge(data.time)} by {data.by}
@@ -67,16 +67,16 @@ const Wrapper = styled.div`
 
 const StoryTitle = styled.h2`
   margin: 0;
-  border-left: 4px solid #ff6600;
+  border-left: 4px solid ${({ theme }) => theme.colors.primary};
   padding-left: 1rem;
 `;
 
 const MutedText = styled.span`
-  color: #bdbdbd;
+  color: ${({ theme }) => theme.colors.muted};
   word-wrap: break-word;
 `;
 
-const Row = styled.div`
+const Stats = styled.div`
   display: flex;
   gap: 16px;
   justify-content: space-between;

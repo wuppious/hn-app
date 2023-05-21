@@ -30,6 +30,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-top: 64px;
 `;
 
 const Divider = styled.div`

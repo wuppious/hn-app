@@ -17,6 +17,6 @@ const Wrapper = styled.div`
   padding: 2rem;
 
   img {
-    box-shadow: 0px 0px 16px #f60;
+    box-shadow: 0px 0px 16px ${({ theme }) => theme.colors.primary};
   }
 `;

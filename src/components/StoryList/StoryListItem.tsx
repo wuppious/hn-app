@@ -35,8 +35,9 @@ const Wrapper = styled.li`
 
   &:hover,
   &:focus-visible {
-    border-color: #ff6600;
-    box-shadow: inset 0px 0px 8px #ff6600, 0px 0px 8px #ff6600;
+    border-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: 0px 0px 8px ${({ theme }) => theme.colors.primary},
+      inset 0px 0px 8px ${({ theme }) => theme.colors.primary};
     transform: translateY(-8px);
   }
 `;
