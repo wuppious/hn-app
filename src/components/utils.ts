@@ -7,19 +7,24 @@ const HOUR = 60 * MINUTE;
 const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 
-const rtf = new Intl.RelativeTimeFormat("en");
+const RTF = new Intl.RelativeTimeFormat("en");
 
+/**
+ *
+ * @param time Seconds elapsed since the epoch
+ * @returns A string representing the item's age, for example "2 minutes ago"
+ */
 export function getItemAge(time: number) {
   const timeDifference = Date.now() / 1000 - time;
 
   if (MINUTE <= timeDifference && timeDifference < HOUR) {
-    return rtf.format(Math.ceil(-timeDifference / MINUTE), "minute");
+    return RTF.format(Math.ceil(-timeDifference / MINUTE), "minute");
   } else if (HOUR <= timeDifference && timeDifference < DAY) {
-    return rtf.format(Math.ceil(-timeDifference / HOUR), "hour");
+    return RTF.format(Math.ceil(-timeDifference / HOUR), "hour");
   } else if (DAY <= timeDifference && timeDifference < WEEK) {
-    return rtf.format(Math.ceil(-timeDifference / DAY), "day");
+    return RTF.format(Math.ceil(-timeDifference / DAY), "day");
   } else if (WEEK <= timeDifference) {
-    return rtf.format(Math.ceil(-timeDifference / WEEK), "week");
+    return RTF.format(Math.ceil(-timeDifference / WEEK), "week");
   } else {
     return "just now";
   }
