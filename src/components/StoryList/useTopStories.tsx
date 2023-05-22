@@ -3,9 +3,11 @@ import { useItemQueries, useTopStoriesQuery } from "@/queries";
 
 const PAGE_SIZE = 20;
 
-// This is to remember the page we're on with the infinite loader, for scroll
-// restoration. I don't exactly want to setup a store only for this purpose, so
-// let's use a top level variable, just this once...
+/**
+ *  This is to remember the page we're on with the infinite loader, for scroll
+ *  restoration. I don't exactly want to setup a store only for this purpose, so
+ *  let's use a top level variable, just this once...
+ */
 let pageToRemember = 1;
 
 export function useTopStories() {
